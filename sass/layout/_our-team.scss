@@ -1,0 +1,104 @@
+.our-team {
+  background: #f5f4fa;
+
+  p {
+    margin-bottom: 16px;
+    @include font(700, 16px, 1.19, 0.03em);
+    text-align: center;
+    color: $text-color;
+  }
+}
+.our-team-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  > li {
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 1px 3px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+  }
+}
+.our-team-secondary-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  @include font(500, 16px, 1.19, 0.03em);
+  text-align: center;
+  color: $main-title-font-color;
+}
+.our-team-list-ikon {
+  @extend %center;
+  padding-bottom: 24px;
+}
+.our-team-list-ikon-item:not(:last-child) {
+  margin-right: 10px;
+}
+.our-team-list-ikon-item-link {
+  @extend %center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms $transition-timing-function;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+.our-team-list-ikon-item-link-svg {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+  transition: fill 250ms $transition-timing-function;
+  .our-team-list-ikon-item-link:hover &,
+  .our-team-list-ikon-item-link:focus & {
+    fill: $secondary-title-font-color;
+  }
+  &:hover,
+  &:focus {
+    fill: #ffffff;
+  }
+}
+.our-projects-list-item {
+  border: 1px solid #eeeeee;
+  &:hover {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+}
+@media screen and (max-width: 767px) {
+  .our-team-list {
+    display: block;
+    margin: 0 auto;
+  }
+  .main-head-style {
+    @include font(900, 28px, 1.78, 0.03em);
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  .our-team-pic {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .our-team-list {
+    margin: -15px;
+  }
+  .our-team-list-item {
+    width: calc((100% - 4 * 15px) / 2);
+    margin: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+  .our-team-list {
+    margin: -15px;
+  }
+  .our-team-list-item {
+    margin: 15px;
+    width: calc((100% - 8 * 15px) / 4);
+    margin: 15px;
+  }
+}

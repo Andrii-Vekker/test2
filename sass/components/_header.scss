@@ -1,0 +1,225 @@
+.header {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-header {
+  font-family: Raleway;
+  font-style: normal;
+  @include font(900, 24px, 1.666, 0.03em);
+  color: $main-title-font-color;
+  span {
+    color: $accent-color;
+  }
+}
+.list-nav-item-link {
+  transition: color 250ms $transition-timing-function;
+  @include font(500, 14px, 1.166, 0.02em);
+  color: $main-title-font-color;
+  &:hover::after {
+    content: "";
+    background-color: $accent-color;
+    transform: scale(1);
+  }
+}
+.list-nav-item .current {
+  color: $accent-color;
+  position: relative;
+  display: block;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -32px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $accent-color;
+}
+.list-nav {
+  & a:hover,
+  & a:focus {
+    color: $accent-color;
+  }
+}
+.adress {
+  font-style: normal;
+}
+.list-adress-item-link {
+  transition: 250ms $transition-timing-function;
+  @include font(500, 14px, 1.166, 0.02em);
+  color: $text-color;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.link-svg {
+  width: 16px;
+  height: 11px;
+  margin-right: 10px;
+  fill: $text-color;
+  text-align: center;
+  .list-adress-item-link:hover &,
+  .list-adress-item-link:focus & {
+    fill: $accent-color;
+  }
+}
+.phone {
+  width: 10px;
+  height: 15px;
+}
+@media screen and (max-width: 767px) {
+  .header {
+    height: 80px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 480px;
+  }
+  .nav {
+    justify-content: space-between;
+  }
+  .menu-wrapper {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #fff;
+    transform: translateY(-117%);
+    transition: all 250ms $transition-timing-function;
+    &.is-open {
+      transform: translateY(0);
+    }
+  }
+  .menu-button-mobile {
+    position: absolute;
+    right: 9px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    line-height: 0;
+    &.is-open {
+      .icon-close {
+        display: block;
+        fill: $accent-color;
+      }
+      .icon-burger {
+        display: none;
+      }
+    }
+  }
+  .icon-close {
+    display: none;
+  }
+  .list-nav {
+    &-item:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+  .list-adress {
+    padding-top: 60px;
+  }
+  .list-adress-item + .list-adress-item {
+    margin-top: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-button-mobile {
+    display: none;
+  }
+  .header {
+    justify-content: flex-start;
+  }
+  .logo-header {
+    margin-right: 81px;
+  }
+  .nav {
+    justify-content: flex-start;
+    display: flex;
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  .menu-wrapper {
+    display: flex;
+  }
+  .list-nav {
+    display: flex;
+    @include font(500, 14px, 1.142, 0.02em);
+    align-items: center;
+  }
+  .list-nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+  .list-adress-item-link {
+    @include font(500, 12px, 1.166, 0.02em);
+    display: flex;
+    align-items: center;
+  }
+  .link-svg {
+    margin-right: 8px;
+  }
+  .adress {
+    margin-left: 84px;
+  }
+  .list-adress-item + .list-adress-item {
+    margin-top: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .nav {
+    height: 81px;
+  }
+  .menu-button-mobile {
+    display: none;
+  }
+  .logo-header {
+    @include font(900, 26px, 1.192, 0.03em);
+    margin-right: 85px;
+  }
+  .nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .menu-wrapper {
+    display: flex;
+  }
+  .list-nav {
+    display: flex;
+    align-items: center;
+  }
+  .list-nav-item:not(:last-child) {
+    margin-right: 50px;
+  }
+  .list-adress-item + .list-adress-item {
+    margin-left: 30px;
+    margin-top: 0;
+  }
+  .list-adress-item-link {
+    @include font(500, 14px, 1.142, 0.02em);
+    display: flex;
+    align-items: center;
+  }
+  .link-svg {
+    margin-right: 10px;
+  }
+  .adress {
+    justify-content: flex-end;
+  }
+  .list-adress {
+    display: flex;
+    align-items: center;
+  }
+}
